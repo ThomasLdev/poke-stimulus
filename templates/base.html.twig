@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome to the official CupcakeShop™ !{% endblock %}</title>
+        <link rel="icon" href="favicon.svg">
+        {% block stylesheets %}
+            <link rel="preload" href="{{ preload(asset('styles/app.css'), { as: 'style' }) }}">
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+    </body>
+    <body {{ stimulus_controller('symfony/ux-swup/swup') }}>
+        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+            {% include 'navbar.html.twig' %}
+        </nav>
+        <main id="swup">
+            {% block pageTitle %}<h1>Hey</h1>{% endblock %}
+            {% block body %}{% endblock %}
+        </main>
+        <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+            {% include 'footer.html.twig' %}
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block pageTitle %}
+    <h1 class="mx-auto mb-6 mt-6 text-4xl text-center font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-black">
+        {{ product.name }}
+    </h1>
+{% endblock %}
+
+{% block body %}
+    <div class="grid grid-cols-2 md:grid-cols-3 sm:grid-cols-1 gap-4 mr-4 ml-4">
+        {% set image = product.images|first %}
+
+        <div class="min-w-[200px] min-h-[400px] bg-cover bg-no-repeat bg-center"
+             style="background-image: url('{{ asset(image.path) }}')">
+        </div>
+    </div>
+
+    <a href="{{ path('app_product_index') }}">Back to list</a>
+{% endblock %}
