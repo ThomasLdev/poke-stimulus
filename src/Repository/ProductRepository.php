@@ -20,12 +20,12 @@ class ProductRepository extends ServiceEntityRepository
     {
         $queryBuilder = $this->createQueryBuilder('p');
 
-        $queryBuilder->select('p')
-            ->innerJoin('p.attributes', 'a');
+        $queryBuilder->select('p');
 
         $i = 0;
         foreach ($filters as $name => $value) {
-            $queryBuilder->andWhere('a.name = :name' . $i . ' AND a.value = :value' . $i)
+            $queryBuilder->innerJoin('p.attributes', 'a' . $i)
+                ->andWhere('a' . $i . '.name = :name' . $i . ' AND a' . $i . '.value = :value' . $i)
                 ->setParameter('name' . $i, $name)
                 ->setParameter('value' . $i, $value[0]);
             $i++;
