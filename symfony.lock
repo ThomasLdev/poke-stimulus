@@ -65,6 +65,18 @@
             "bin/console"
         ]
     },
+    "symfony/debug-bundle": {
+        "version": "7.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.3",
+            "ref": "5aa8aa48234c8eb6dbdd7b3cd5d791485d2cec4b"
+        },
+        "files": [
+            "config/packages/debug.yaml"
+        ]
+    },
     "symfony/flex": {
         "version": "2.4",
         "recipe": {
@@ -132,6 +144,19 @@
             "assets/controllers/hello_controller.js"
         ]
     },
+    "symfony/translation": {
+        "version": "7.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "6.3",
+            "ref": "e28e27f53663cc34f0be2837aba18e3a1bef8e7b"
+        },
+        "files": [
+            "config/packages/translation.yaml",
+            "translations/.gitignore"
+        ]
+    },
     "symfony/twig-bundle": {
         "version": "7.0",
         "recipe": {
@@ -145,8 +170,8 @@
             "templates/base.html.twig"
         ]
     },
-    "symfony/ux-swup": {
-        "version": "v2.17.0"
+    "symfony/ux-turbo": {
+        "version": "v2.18.0"
     },
     "symfony/web-profiler-bundle": {
         "version": "7.0",

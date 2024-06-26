@@ -1,0 +1,67 @@
+product:
+    no_results: No cupcakes found
+    attribute:
+        has_sprinkles:
+            label: Has Sprinkles
+            options:
+                yes:
+                    label: With
+                no:
+                    label: Without
+        is_vegan:
+            label: Is Vegan
+            options:
+                yes:
+                    label: Yes
+                no:
+                    label: No
+        difficulty:
+            label: Difficulty
+            options:
+                easy:
+                    label: Easy
+                medium:
+                    label: Medium
+                hard:
+                    label: Hard
+                expert:
+                    label: Expert
+        frosting:
+            label: Frosting
+        filling:
+            label: Filling
+        flavor:
+            label: Flavor
+            options:
+                chocolate:
+                    label: Chocolate
+                vanilla: 
+                    label: Vanilla
+                strawberry: 
+                    label: Strawberry
+                cookies_and_cream:
+                    label: Cookies and Cream
+                peanut_butter:
+                    label: Peanut Butter
+                carrot:
+                    label: Carrot
+                red_velvet:
+                    label: Red Velvet
+                lemon:
+                    label: Lemon
+                coconut:
+                    label: Coconut
+                banana:
+                    label: Banana
+                orange:
+                    label: Orange
+                pumpkin:
+                    label: Pumpkin
+                apple:
+                    label: Apple
+                blueberry:
+                    label: Blueberry
+                raspberry:
+                    label: Raspberry
+                mint:
+                    label: Mint

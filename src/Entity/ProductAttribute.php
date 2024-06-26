@@ -43,9 +43,13 @@ class ProductAttribute
         return $this;
     }
 
-    public function getValue(): ?string
+    public function getValue(): string|int|bool|null
     {
-        return $this->value;
+        return match ($this->type) {
+            'boolean' => (bool)$this->value,
+            'integer' => (int)$this->value,
+            default => $this->value,
+        };
     }
 
     public function setValue(?string $value): static
@@ -65,15 +69,6 @@ class ProductAttribute
         $this->type = $type;
 
         return $this;
-    }
-
-    public function getValueAsType(): string|int|bool|null
-    {
-        return match ($this->type) {
-            'boolean' => (bool)$this->value,
-            'integer' => (int)$this->value,
-            default => $this->value,
-        };
     }
 
     public function getProduct(): ?Product

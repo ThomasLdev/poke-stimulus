@@ -16,28 +16,21 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-    //    /**
-    //     * @return Product[] Returns an array of Product objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('p')
-    //            ->andWhere('p.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('p.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+    public function getProductsByFilters(array $filters): array
+    {
+        $queryBuilder = $this->createQueryBuilder('p');
 
-    //    public function findOneBySomeField($value): ?Product
-    //    {
-    //        return $this->createQueryBuilder('p')
-    //            ->andWhere('p.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+        $queryBuilder->select('p')
+            ->innerJoin('p.attributes', 'a');
+
+        $i = 0;
+        foreach ($filters as $name => $value) {
+            $queryBuilder->andWhere('a.name = :name' . $i . ' AND a.value = :value' . $i)
+                ->setParameter('name' . $i, $name)
+                ->setParameter('value' . $i, $value[0]);
+            $i++;
+        }
+
+        return $queryBuilder->getQuery()->getResult();
+    }
 }
