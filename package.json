@@ -1,0 +1,17 @@
+{
+  "name": "symfony-docker",
+  "version": "1.0.0",
+  "description": "- filters page list - media sliders on show page - contact form ajax",
+  "main": "tailwind.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.12.0"
+  }
+}

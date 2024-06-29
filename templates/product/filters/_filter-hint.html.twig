@@ -4,7 +4,7 @@
             {% for value in hint %}
                 <span id="badge-dismiss-default"
                       class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-blue-800 bg-blue-100 rounded
-              dark:bg-blue-900 dark:text-blue-300"
+              bg-{{ value }} text-{{ value }} cursor-pointer"
                       data-filter-hint="{{ key ~ '-' ~ value }}"
                 >
             {{ key ~ ': ' ~ value }}
@@ -32,7 +32,7 @@
         {% endfor %}
         <span id="badge-dismiss-default"
               class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-blue-800 bg-blue-100 rounded
-              dark:bg-grey-900 dark:text-grey-300"
+              dark:bg-grey-900 dark:text-grey-300 cursor-pointer"
               data-filter-hint="reset"
         >
             remove all filters
