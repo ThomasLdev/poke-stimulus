@@ -17,6 +17,8 @@ class ProductController extends AbstractController
     {
         $products = $productRepository->findAll();
 
+        $this->addFlash('success', 'The products were successfully retrieved.');
+
         return $this->render('product/index.html.twig', [
             'products' => $products,
             'attributes' => $attributeService->getAttributes($products),

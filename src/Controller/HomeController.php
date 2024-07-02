@@ -11,6 +11,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_index')]
     public function index(): Response
     {
+        $this->addFlash('info', 'Welcome to the Space Bar!');
         return $this->render('home/index.html.twig');
     }
 }
